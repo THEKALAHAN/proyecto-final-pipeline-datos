@@ -1,0 +1,10 @@
+# Entorno virtual y cachés
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# Zona raw: se regenera al ejecutar el cuaderno (~80 MB)
+raw/
+
+# Descargas parciales
+*.part

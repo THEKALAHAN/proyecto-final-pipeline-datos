@@ -1,0 +1,11 @@
+# Pipeline (cuaderno)
+pyspark==3.5.1
+pandas>=2.0,<2.3
+requests
+urllib3
+ipykernel
+setuptools  # PySpark 3.5 usa distutils, que Python 3.12 ya no incluye
+
+# Tablero
+dash>=4.0
+plotly>=6.0

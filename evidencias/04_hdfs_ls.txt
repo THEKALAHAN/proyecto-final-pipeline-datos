@@ -1,0 +1,12 @@
+drwxr-xr-x   - juanl supergroup          0 2026-11-24 19:27 /datalake/socrata_api_nyc/erm2-nwe9/fecha_ingesta=2026-11-24
+-rw-r--r--   1 juanl supergroup   10034083 2026-11-24 19:26 /datalake/socrata_api_nyc/erm2-nwe9/fecha_ingesta=2026-11-24/lote_00000.jsonl
+-rw-r--r--   1 juanl supergroup    9829095 2026-11-24 19:26 /datalake/socrata_api_nyc/erm2-nwe9/fecha_ingesta=2026-11-24/lote_00001.jsonl
+-rw-r--r--   1 juanl supergroup    9956489 2026-11-24 19:26 /datalake/socrata_api_nyc/erm2-nwe9/fecha_ingesta=2026-11-24/lote_00002.jsonl
+-rw-r--r--   1 juanl supergroup    9699999 2026-11-24 19:26 /datalake/socrata_api_nyc/erm2-nwe9/fecha_ingesta=2026-11-24/lote_00003.jsonl
+-rw-r--r--   1 juanl supergroup   10142808 2026-11-24 19:27 /datalake/socrata_api_nyc/erm2-nwe9/fecha_ingesta=2026-11-24/lote_00004.jsonl
+-rw-r--r--   1 juanl supergroup    9818146 2026-11-24 19:27 /datalake/socrata_api_nyc/erm2-nwe9/fecha_ingesta=2026-11-24/lote_00005.jsonl
+-rw-r--r--   1 juanl supergroup   10666511 2026-11-24 19:27 /datalake/socrata_api_nyc/erm2-nwe9/fecha_ingesta=2026-11-24/lote_00006.jsonl
+-rw-r--r--   1 juanl supergroup    9953408 2026-11-24 19:27 /datalake/socrata_api_nyc/erm2-nwe9/fecha_ingesta=2026-11-24/lote_00007.jsonl
+-rw-r--r--   1 juanl supergroup    3466994 2026-11-24 19:27 /datalake/socrata_api_nyc/erm2-nwe9/fecha_ingesta=2026-11-24/lote_00008.jsonl
+
+Líneas en HDFS: 49980 | Registros descargados de la API: 49980 | ¿Coinciden?: True

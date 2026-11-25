@@ -1,0 +1,3 @@
+Tipos de queja -> MapReduce: 152 | Spark: 152
+Total -> MapReduce: 49980 | Spark: 49980
+¿Los resultados coinciden?: True
