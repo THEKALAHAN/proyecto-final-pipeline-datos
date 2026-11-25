@@ -285,6 +285,26 @@ def seccion_capa_rapida():
                    ], nota="En la arquitectura lambda esta capa cubre lo más reciente mientras llega el siguiente lote batch.")
 
 
+def seccion_respuesta():
+    """La respuesta a la pregunta, por dimensión. El texto viene redactado desde el pipeline (tabla ind_respuesta)."""
+    try:
+        df = leer("SELECT * FROM ind_respuesta ORDER BY orden")
+    except Exception:
+        return None   # base generada antes de existir esta tabla
+    conclusion = df[df["dimension"] == "Conclusión"]
+    partes = df[df["dimension"] != "Conclusión"]
+    return html.Section([
+        html.H2("Respuesta a la pregunta"),
+        html.Div([
+            html.Div([html.Div(fila["dimension"], className="respuesta-dimension"),
+                      html.P(fila["respuesta"], className="respuesta-texto")], className="respuesta-item")
+            for _, fila in partes.iterrows()
+        ], className="respuesta-rejilla"),
+        html.P([html.B("Conclusión: "), conclusion["respuesta"].iloc[0]], className="respuesta-conclusion")
+        if len(conclusion) else None,
+    ], className="respuesta", **{"aria-label": "Respuesta a la pregunta"})
+
+
 def construir_layout():
     """Se evalúa en cada carga de página: si el pipeline se vuelve a ejecutar, el tablero muestra los datos nuevos."""
     if not DB_SERVICIO.exists():
@@ -309,6 +329,7 @@ def construir_layout():
             kpi(meta["num_tipos"], "tipos de problema"),
             kpi(meta["num_agencias"], "agencias responsables"),
         ], className="kpis"),
+        seccion_respuesta(),
         dcc.Tabs([
             dcc.Tab(seccion_indicadores(meta), label="Indicadores", value="indicadores",
                     className="pestana", selected_className="pestana-activa"),

@@ -12,12 +12,15 @@ Usuarios de los indicadores: ciudadanos, investigadores de gestión urbana, admi
 
 Illegal Parking, Noise - Residential y HEAT/HOT WATER concentran el 42,2% de las quejas en Nueva York; resolverlas toma desde 1,2 h (Noise - Residential) hasta 42,3 h (HEAT/HOT WATER).
 
-| Indicador | Resultado |
-|---|---|
-| Solicitudes ya cerradas | 84,4% |
-| Mediana de tiempo hasta el cierre | 2,6 h |
-| Agencia más rápida / más lenta (mediana) | DOB (0,0 h) / DOHMH (3,1 días) |
-| Distrito más rápido / más lento (mediana) | BROOKLYN (2,0 h) / BRONX (3,8 h) |
+* **Principales problemas:** Los más reportados son Illegal Parking (18,0%), Noise - Residential (15,6%) y HEAT/HOT WATER (8,6%): juntos suman el 42,2% de las 49.944 solicitudes. Les siguen Noise - Street/Sidewalk y Blocked Driveway.
+* **Según el tipo de problema:** Entre los 10 problemas más frecuentes, Noise - Commercial es el que se cierra más rápido (mediana de 0,9 h) y UNSANITARY CONDITION el que más tarda (6,3 días).
+* **Según la agencia:** NYPD (New York City Police Department) atiende el 54,0% de las solicitudes y las cierra en una mediana de 1,3 h. La más lenta es DOHMH (Department of Health and Mental Hygiene), con 3,1 días.
+* **Según la ubicación:** BROOKLYN es el distrito con más solicitudes (34,0%). La mediana de resolución va de 2,0 h en BROOKLYN a 3,8 h en BRONX.
+* **Atención en general:** El 84,4% de las solicitudes ya está cerrado y la mediana hasta el cierre es de 2,6 h.
+
+**Conclusión:** El tiempo de atención depende mucho más de la agencia y del tipo de problema que de la ubicación: entre agencias la mediana va de 0,0 h a 3,1 días, mientras que entre distritos solo va de 2,0 h a 3,8 h.
+
+El tablero muestra esta misma respuesta en la sección *Respuesta a la pregunta*; los textos los genera el pipeline (tabla `ind_respuesta`).
 
 ## Fuente
 
@@ -130,6 +133,7 @@ El pipeline calcula los indicadores (Parte 8) y el tablero solo hace `SELECT`, s
 | `ind_capa_rapida` | Capa rápida (lambda) | Línea de solicitudes por ventana de 15 minutos |
 | `ind_pipeline` | Trazabilidad | Pestaña "Cómo se construyó": evidencias de cada etapa |
 | `ind_metadatos` | Título, fuente y fecha de corte | Encabezado, cifras clave y pie de página |
+| `ind_respuesta` | La respuesta a la pregunta, por dimensión | Sección "Respuesta a la pregunta" bajo las cifras clave |
 
 Cada gráfico tiene su tabla de datos equivalente ("Ver tabla de datos").
 

@@ -1,5 +1,5 @@
 {
-    "fecha_ejecucion": "2026-11-24T19:29:29.867988",
+    "fecha_ejecucion": "2026-11-24T19:52:32.785604",
     "watermark_anterior": "1900-01-01 00:00:00",
     "watermark_nuevo": "2026-11-23 12:06:02",
     "validaciones_criticas": "APROBADAS (Conteo > 0, PK \u00fanica/sin nulos, Columnas clave sin nulos)",

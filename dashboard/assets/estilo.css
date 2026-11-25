@@ -39,6 +39,14 @@ body {
 .kpi-valor { font-size: 28px; font-weight: 700; line-height: 1.1; }
 .kpi-etiqueta { margin-top: 4px; color: var(--tinta-2); font-size: 13px; }
 
+/* Respuesta a la pregunta */
+.respuesta { background: var(--superficie); border: 1px solid var(--borde); border-left: 4px solid var(--azul); border-radius: 14px; padding: 20px; margin-bottom: 24px; }
+.respuesta h2 { margin: 0 0 14px; font-size: 19px; }
+.respuesta-rejilla { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px 24px; }
+.respuesta-dimension { color: var(--azul-oscuro); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .02em; }
+.respuesta-texto { margin: 4px 0 0; font-size: 14.5px; color: var(--tinta); }
+.respuesta-conclusion { margin: 18px 0 0; padding-top: 14px; border-top: 1px solid var(--rejilla); font-size: 15px; }
+
 /* Pestañas */
 .pestanas { border-bottom: 1px solid var(--rejilla) !important; margin-bottom: 20px; }
 .pestana {
