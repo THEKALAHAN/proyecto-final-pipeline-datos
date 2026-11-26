@@ -348,9 +348,13 @@ def construir_layout():
 
 
 # --------------------------------------------------------------------------- aplicación
-app = Dash(__name__, title="Solicitudes 311 NYC",
+# En Vercel (variable VERCEL definida) las librerías JavaScript se cargan desde el CDN de unpkg:
+# las funciones de Vercel no pueden responder más de 4,5 MB y plotly.min.js pesa casi 5 MB.
+EN_VERCEL = bool(os.environ.get("VERCEL"))
+app = Dash(__name__, title="Solicitudes 311 NYC", serve_locally=not EN_VERCEL,
            meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}])
 app.layout = construir_layout
+server = app.server   # aplicación Flask (WSGI) que usan Vercel u otros servidores
 
 
 @app.callback(Output("grafico-agencias", "figure"), Output("tabla-agencias", "children"), Input("metrica-agencias", "value"))

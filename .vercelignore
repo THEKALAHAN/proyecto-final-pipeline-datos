@@ -1,0 +1,9 @@
+# Vercel solo necesita el tablero, la base de servicio y el diagrama.
+# requirements.txt incluye PySpark (≈ 300 MB): las dependencias del tablero están en pyproject.toml.
+requirements.txt
+Final_Datos_Masivos.ipynb
+evidencias/
+raw/
+.venv/
+__pycache__/
+.ipynb_checkpoints/

@@ -63,7 +63,10 @@ flowchart LR
 ├── servicio_nyc311.db          # Zona de servicio generada por el pipeline
 ├── evidencias/                 # Evidencias de HDFS, MapReduce vs Spark, calidad y marca de agua
 ├── diagrama_pipeline.png
-└── requirements.txt
+├── requirements.txt            # Dependencias del pipeline completo
+├── index.py                    # Entrada del tablero para Vercel
+├── pyproject.toml              # Dependencias del tablero (despliegue en Vercel)
+└── .vercelignore               # Lo que no se sube a Vercel
 ```
 
 La carpeta `raw/` (≈ 80 MB) no se sube al repositorio porque el cuaderno la regenera.
@@ -119,6 +122,20 @@ Para comprobar la ejecución completa desde una terminal, sin abrir el editor:
 ```
 
 Luego entra a <http://127.0.0.1:8050>. El tablero solo lee `servicio_nyc311.db`: no necesita HDFS ni Spark encendidos, y como el repositorio incluye la base ya generada, puede abrirse sin ejecutar el pipeline.
+
+### 4. Publicar el tablero en internet (Vercel)
+
+El repositorio ya está preparado para Vercel:
+
+| Archivo | Para qué sirve |
+|---|---|
+| `index.py` | Punto de entrada: expone el servidor Flask del tablero como `app`, que es lo que busca Vercel |
+| `pyproject.toml` | Solo las dependencias del tablero (Flask, Dash, Plotly y pandas) |
+| `.vercelignore` | Deja fuera del despliegue el `requirements.txt` del pipeline (PySpark pesa ≈ 300 MB), el cuaderno y las evidencias |
+
+Para publicarlo: entra a [vercel.com](https://vercel.com) con tu cuenta de GitHub, elige *Add New → Project*, importa este repositorio y pulsa *Deploy* sin cambiar la configuración. Cada push a `main` vuelve a publicarlo.
+
+En Vercel el tablero carga las librerías JavaScript (React, Plotly) desde el CDN de unpkg, porque una función de Vercel no puede responder más de 4,5 MB y `plotly.min.js` pesa casi 5 MB. En local las sigue sirviendo el propio tablero. La base SQLite viaja con el despliegue y solo se lee.
 
 ## Zona de servicio e indicadores
 

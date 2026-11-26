@@ -1,0 +1,14 @@
+# Dependencias del tablero para el despliegue en Vercel.
+# El pipeline completo (PySpark, Jupyter, etc.) se instala con requirements.txt;
+# ese archivo se excluye del despliegue en .vercelignore para no subir PySpark.
+[project]
+name = "tablero-nyc311"
+version = "1.0.0"
+description = "Tablero de solicitudes 311 de Nueva York (lee la zona de servicio en SQLite)"
+requires-python = ">=3.12"
+dependencies = [
+    "flask>=3.0",
+    "dash>=4.0",
+    "plotly>=6.0",
+    "pandas>=2.0,<2.3",
+]
